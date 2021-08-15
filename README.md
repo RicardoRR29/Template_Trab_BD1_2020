@@ -11,12 +11,9 @@ Ricardo Rocha Ribeiro: r3ifes@gmail.com
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
 
 > Dona Maria (nome fictício) é uma pessoa, que como muitos brasileiros, exerce a atividade de vender alimentos produzidos artesanalmente em casa. Com o crescimento da demanda, consequentemente das vendas, observou que era necessário criar procedimentos e modelos que melhorem sua produtividade. Assim, Maria começou a usar planilhas desenvolvidas pelo seu filho, para apoiar no dia-a-dia das operações, com registro de produtos e pedidos de seus clientes.
- 
-Ao longo do tempo, percebeu que sempre há um problema quando um novo produto precisa ser cadastrado, a planilha não atende a sua necessidade. Sempre é preciso que a ferramenta passe por uma atualização nas suas diversas fórmulas e campos, para ser possível atender, via sistema, a esse novo produto. Além disso, durante o “corre corre” de gerar pedidos por telefone, levar um produto para alguém, ou até fabricar, ela não tem tempo de ficar consertando planilhas. 
-
-Apesar da ferramenta em uso nem sempre ser útil, quando funciona, atende às necessidades do dia-a-dia: ajuda a calcular preços total para cobrança, organizar os pedidos por cliente, registrar dados fundamentais para que se tenha o mínimo de  organização, para assim dar conta do máximo de pedidos que puder ter.  
-
-Tentando resolver esses problemas, o cliente sugeriu a construção de um sistema. Sua expectativa é que ele ajude nos processos já implementados, e em outros que também possam ser facilitados, como na administração do estoque e compras. 
+> Ao longo do tempo, percebeu que sempre há um problema quando um novo produto precisa ser cadastrado, a planilha não atende a sua necessidade. Sempre é preciso que a ferramenta passe por uma atualização nas suas diversas fórmulas e campos, para ser possível atender, via sistema, a esse novo produto. Além disso, durante o “corre corre” de gerar pedidos por telefone, levar um produto para alguém, ou até fabricar, ela não tem tempo de ficar consertando planilhas. 
+> Apesar da ferramenta em uso nem sempre ser útil, quando funciona, atende às necessidades do dia-a-dia: ajuda a calcular preços total para cobrança, organizar os pedidos por cliente, registrar dados fundamentais para que se tenha o mínimo de  organização, para assim dar conta do máximo de pedidos que puder ter.  
+> Tentando resolver esses problemas, o cliente sugeriu a construção de um sistema. Sua expectativa é que ele ajude nos processos já implementados, e em outros que também possam ser facilitados, como na administração do estoque e compras. 
  
  
 
