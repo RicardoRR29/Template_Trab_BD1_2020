@@ -5,26 +5,24 @@ Trabalho desenvolvido durante a disciplina de BD1
 
 ### 1. COMPONENTES<br>
 Integrantes do grupo<br>
-primeiro_componente_do_grupo:email_primeiro_componente@dominio.com<br>
-segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
+Ricardo Rocha Ribeiro: r3ifes@gmail.com
 ...<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
-Este documento contém a especificação do projeto do banco de dados <nome do projeto> 
-<br>e motivação da escolha realizada. <br>
 
-> A empresa "Devcom Projetos" visa colaborar com desenvolvimento de projetos para uma sociedade melhor. Sabendo-se dos desafios para gerenciar projetos dentro de uma empresa e visando unir as informações relativas a funcionários, departamentos e projetos em um mesmo local, ficamos motivados com o desenvolvimento deste sistema. O Sistema "Devcom" tem como objetivo gerenciar todas as informações ao desenvolvimento das atividades de projetos em diversas localidades do país. Para realizar suas operações adequadamente e empresa necessita que sistema que armazene informações relativas aos Projetos, Departamentos e Empregados, além de também armazenar dados sobre  Dependentes e Históricos de Salário dos empregados. O sistema deverá gerar um conjunto de relatórios que por sua vez atenderá os anseios da empresa em questão.
+> Dona Maria (nome fictício) é uma pessoa, que como muitos brasileiros, exerce a atividade de vender alimentos produzidos artesanalmente em casa. Com o crescimento da demanda, consequentemente das vendas, observou que era necessário criar procedimentos e modelos que melhorem sua produtividade. Assim, Maria começou a usar planilhas desenvolvidas pelo seu filho, para apoiar no dia-a-dia das operações, com registro de produtos e pedidos de seus clientes.
+ 
+Ao longo do tempo, percebeu que sempre há um problema quando um novo produto precisa ser cadastrado, a planilha não atende a sua necessidade. Sempre é preciso que a ferramenta passe por uma atualização nas suas diversas fórmulas e campos, para ser possível atender, via sistema, a esse novo produto. Além disso, durante o “corre corre” de gerar pedidos por telefone, levar um produto para alguém, ou até fabricar, ela não tem tempo de ficar consertando planilhas. 
+
+Apesar da ferramenta em uso nem sempre ser útil, quando funciona, atende às necessidades do dia-a-dia: ajuda a calcular preços total para cobrança, organizar os pedidos por cliente, registrar dados fundamentais para que se tenha o mínimo de  organização, para assim dar conta do máximo de pedidos que puder ter.  
+
+Tentando resolver esses problemas, o cliente sugeriu a construção de um sistema. Sua expectativa é que ele ajude nos processos já implementados, e em outros que também possam ser facilitados, como na administração do estoque e compras. 
+ 
  
 
 ### 3.MINI-MUNDO<br>
 
-Descrever o mini-mundo! (Não deve ser maior do que 30 linhas, se necessário resumir para justar) <br>
-Entrevista com o usuário e identificação dos requisitos.(quando for o caso de sistemas com cliente  real)<br>
-Descrição textual das regras de negócio definidas como um  subconjunto do mundo real 
-cujos elementos são propriedades que desejamos incluir, processar, armazenar, 
-gerenciar, atualizar, e que descrevem a proposta/solução a ser desenvolvida.
-
-> O sistema proposto para a "Devcom Projetos conterá as informacões aqui detalhadas. Dos Projetos serão armazenados o número, nome e cidade. Dos Departamentos serão armazenados o número e nome. O cliente destacou que cada projeto pode ter vários departamentos auxiliando no seu desenvolvimento, e cada departamento pode estar envolvido em vários projetos. Os dados relativos aos empregados que serão armazenados são: rg, nome, cpf, salário, data inicial do salario e supervisor de cada empregado. É importante destacar que cada empregado pode ser supervisionado por outro empregado, e obrigatoriamente deve estar alocado a um único departamento, mas pode gerenciar vários departamentos ou não gerenciar nenhum. Um empregado também pode participar de vários projetos, caso seja necessário, mas não precisa obrigatoriamente estar alocado em algum projeto. Com relação aos dependentes serão armazenadas as informações de nome do dependente, data de nascimento, sexo e grau de parentesco. Cada empregado pode ter vários dependentes, mas um dependente esta associado apenas a um único empregado. Com relação ao histórico de salário devemos armazenar as informações de valor do salário, data de início do salário no período e data final do salário no período. É importante lembrar que cada funcionario pode ter diversos eventos de histórico de salário associados a ele visto que este dado pode ser alterado várias vezes. 
+> O sistema proposto para a Ma Insumos conterá as informacões aqui detalhadas. Dos pedidos serão armazenados um código único, os produtos(em formato de JSON, com os respectivos códigos, nome e preço), o preço total, a data de compra e código do cliente. Do cliente será armazenado o nome, endereço, email e última compra. Para controle do estoque/insumos, será criada uma tabela a parte com o código de cada receita, os insumos utilizados, o valor que ela gera, tempo gasto e categoria. E por último, haverá um estoque responsavél por dizer exatamente quanto ainda há de insumos, tendo cadad insumo seu código, data de compra, validade e quantidade.
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
