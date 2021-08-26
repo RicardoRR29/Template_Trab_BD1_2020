@@ -1,25 +1,21 @@
-# TRABALHO 01:  Título do Trabalho
+# TRABALHO 01:  JG Mercados
 Trabalho desenvolvido durante a disciplina de BD1
 
 # Sumário
 
 ### 1. COMPONENTES<br>
-Integrantes do grupo<br>
+Integrante do grupo<br>
 Ricardo Rocha Ribeiro: r3ifes@gmail.com
-...<br>
+<br>
 
 ### 2.INTRODUÇÃO E MOTIVAÇÃO<br>
 
-> Dona Maria (nome fictício) é uma pessoa, que como muitos brasileiros, exerce a atividade de vender alimentos produzidos artesanalmente em casa. Com o crescimento da demanda, consequentemente das vendas, observou que era necessário criar procedimentos e modelos que melhorem sua produtividade. Assim, Maria começou a usar planilhas desenvolvidas pelo seu filho, para apoiar no dia-a-dia das operações, com registro de produtos e pedidos de seus clientes.
-> Ao longo do tempo, percebeu que sempre há um problema quando um novo produto precisa ser cadastrado, a planilha não atende a sua necessidade. Sempre é preciso que a ferramenta passe por uma atualização nas suas diversas fórmulas e campos, para ser possível atender, via sistema, a esse novo produto. Além disso, durante o “corre corre” de gerar pedidos por telefone, levar um produto para alguém, ou até fabricar, ela não tem tempo de ficar consertando planilhas. 
-> Apesar da ferramenta em uso nem sempre ser útil, quando funciona, atende às necessidades do dia-a-dia: ajuda a calcular preços total para cobrança, organizar os pedidos por cliente, registrar dados fundamentais para que se tenha o mínimo de  organização, para assim dar conta do máximo de pedidos que puder ter.  
-> Tentando resolver esses problemas, o cliente sugeriu a construção de um sistema. Sua expectativa é que ele ajude nos processos já implementados, e em outros que também possam ser facilitados, como na administração do estoque e compras. 
- 
- 
+> Um mercadinho popular tem aumentado sua demanda consideravelmente e o dono percebeu a necessidade de ter um controle maior do que está entrando e saindo e para poder analisar melhor o próprio negócio. Para isso, ele quer um programa de controle simples para conseguir armazenar algumas informações
 
+ 
 ### 3.MINI-MUNDO<br>
 
-> O sistema proposto para a Ma Insumos conterá as informacões aqui detalhadas. Dos pedidos serão armazenados um código único, os produtos(em formato de JSON, com os respectivos códigos, nome e preço), o preço total, a data de compra e código do cliente. Do cliente será armazenado o nome, endereço, email e última compra. Para controle do estoque/insumos, será criada uma tabela a parte com o código de cada receita, os insumos utilizados, o valor que ela gera, tempo gasto e categoria. E por último, haverá um estoque responsavél por dizer exatamente quanto ainda há de insumos, tendo cadad insumo seu código, data de compra, validade e quantidade.
+> O sistema proposto para o JG Mercados conterá as informacões aqui detalhadas. Sobre os clientes serão armazenados um código de identificação, nome, email, endereço. Sobre o endereço serão armazenadas as informações referentes as ruas/rodovias, cidade, estado e cep e código do cliente. Cada cliente poderá ter no mínimo um pedido, e este será composto por um código, data, código do cliente, e valor. Haverá também uma lista de produtos, em que os produtos possuirão um código, nome, preço, quantidade, descricao. Os pedidos estarão ligados a produtos, com a informação do nome, quantidade, código de categoria, valor, código do produto, código do pedido. Sobre as categorias serão armazenados um código específico para cada categoria e um nome.
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
@@ -30,14 +26,16 @@ Sugestão: https://balsamiq.com/products/mockups/<br>
 ![Alt text](https://github.com/discipbd1/trab01/blob/master/balsamiq.png?raw=true "Title")
 ![Arquivo PDF do Protótipo Balsamiq feito para Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/EmpresaDevcom.pdf?raw=true "Empresa Devcom")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informaçes? 
+    a) O sistema proposto poderá fornecer quais tipos de relatórios e informações? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
-> A Empresa DevCom precisa inicialmente dos seguintes relatórios:
-* Relatório que mostre o nome de cada supervisor(a) e a quantidade de empregados supervisionados.
-* Relatório relativo aos os supervisores e supervisionados. O resultado deve conter o nome do supervisor e nome do supervisionado além da quantidade total de horas que cada supervisionado tem alocada aos projetos existentes na empresa.
-* Relatorio que mostre para cada linha obtida o nome do departamento, o valor individual de cada salario existente no  departamento e a média geral de salarios dentre todos os empregados. Os resultados devem ser apresentados ordenados por departamento.
-* Relatório que mostre as informações relacionadas a todos empregados de empresa (sem excluir ninguém). As linhas resultantes devem conter informações sobre: rg, nome, salario do empregado, data de início do salario atual, nomes dos projetos que participa, quantidade de horas e localização nos referidos projetos, numero e nome dos departamentos aos quais está alocado, informações do historico de salário como inicio, fim, e valores de salarios antigos que foram inclusos na referida tabela (caso possuam informações na mesma), além de todas informações relativas aos dependentes. 
+> A empresa JG Mercados, a partir das informações armazenadas, poderá fornecer:
+* O sistema proposto pode ajudar a entender o que está acontecendo na empresa, quem são os clientes, o que é mais vendido, qual produto é mais vendido entre os clientes que moram perto/longe. Qual categoria os clientes de determinada região compram mais. Estas informações podem se tornar chaves para uma boa decisão
+* Relatório que mostre o a localização dos clientes. Caso queiram fazer alguma propaganda digital ou até mesmo física, sabem qual área escolher para a exibição da propaganda.
+* Relatório que mostre os horários de pico do mercado.
+* Relatório para saber qual produto/categoria está sendo mais/menos vendido(a).
+
+
 >> ##### Observações: <br> a) perceba que este relatório pode conter linhas com alguns dados repetidos (mas não todos). <br>  b) para os empregados que não possuirem alguma destas informações o valor no registro deve aparecer sem informação/nulo. 
 * Relatório que obtenha a frequencia absoluta e frequencia relativa da quantidade de cpfs únicos no relatório anterior. Apresente os resultados ordenados de forma decrescente pela frequencia relativa.
 
