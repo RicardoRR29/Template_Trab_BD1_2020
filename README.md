@@ -57,7 +57,7 @@ Link para baixar o pdf interativo:
         Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
         e tuplas falsas (Aplicar os conceitos de normalização abordados).   
         
-![Alt text](https://github.com/discipbd1/trab01/blob/master/images/modelo-conceitual.PNG?raw=true "Modelo Conceitual")
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/modelo-conceitual.PNG?raw=true "Modelo Conceitual")
     
     
         
@@ -78,6 +78,8 @@ Link para baixar o pdf interativo:
         a) inclusão do esquema lógico do banco de dados
         b) verificação de correspondencia com o modelo conceitual 
         (não serão aceitos modelos que não estejam em conformidade)
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/modelo-logico.PNG?raw=true "Modelo Lógico")
+
 
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
