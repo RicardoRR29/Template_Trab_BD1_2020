@@ -23,7 +23,7 @@ Ricardo Rocha Ribeiro: r3ifes@gmail.com
 
 Link para baixar o pdf interativo:
 
-![Arquivo PDF do Protótipo Balsamiq feito para JG Mercados](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/arquivos/JGmercados.pdf?raw=true "JG Mercados")
+![Arquivo PDF do Protótipo Balsamiq feito para JG Mercados](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/arquivos/JGMercados.pdf?raw=true "JG Mercados")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
     a) O sistema proposto poderá fornecer quais tipos de relatórios e informações? 
     b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
@@ -63,8 +63,8 @@ Link para baixar o pdf interativo:
         
     
 #### 5.1 Validação do Modelo Conceitual
-    [Grupo01]: [Nomes dos que participaram na avaliação]
-    [Grupo02]: [Nomes dos que participaram na avaliação]
+    [Grupo01]: Gustavo Gomes
+    [Grupo02]: George Matheus Santos
 
 #### 5.2 Descrição dos dados 
     [objeto]: [descrição do objeto]
