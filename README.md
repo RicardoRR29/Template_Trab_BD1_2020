@@ -25,11 +25,10 @@ Link para baixar o pdf interativo:
 ![Arquivo PDF do Protótipo Balsamiq feito para JG Mercados](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/arquivos/JGMercados.pdf?raw=true "JG Mercados")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
     
- A empresa JG Mercados, a partir das informações armazenadas, poderá fornecer:
- a)O sistema proposto pode ajudar a entender o que está acontecendo na empresa, quem são os clientes, o que é mais vendido, qual produto é mais vendido entre os clientes que moram perto/longe. Qual categoria os clientes de determinada região compram mais. Estas informações podem se tornar chaves para uma boa decisão de negócio.
+a) O sistema proposto pode ajudar a entender o que está acontecendo na empresa, quem são os clientes, o que é mais vendido, qual produto é mais vendido entre os clientes que moram perto/longe. Qual categoria os clientes de determinada região compram mais. Estas informações podem se tornar chaves para uma boa decisão de negócio.
 <br>
 b) Relatórios:
->  1) - Relatório que mostre o a localização dos clientes. Caso queiram fazer alguma propaganda digital ou até mesmo física, sabem qual área escolher para a exibição da propaganda.
+> 1) Relatório que mostre o a localização dos clientes. Caso queiram fazer alguma propaganda digital ou até mesmo física, sabem qual área escolher para a exibição da propaganda.
 > 2) Relatório que mostre os horários de pico do mercado.
 > 3) Relatório para saber qual produto/categoria está sendo mais/menos vendido(a). 
 > 4)
@@ -86,11 +85,11 @@ Modelo conceitual feito a partir das informações retiradas do minimundo.
         preco: valor de venda do produto
         quantidade: quantidade do produto em questão no estoque
         descricao: descrição/comentário do produto
-        id_categoria: identificação da categoria relacionada ao produto
 <br>
     Na tabela CATEGORIA:  
         id: identificação única da categoria
         categoria: nome da categoria
+        id_produto: identificação do produto relacionada a categoria
 <br>
     Na tabela PEDIDO_PRODUTO:  
         id: identificação única da relação entre um dos pedidos e um dos produtos
@@ -108,7 +107,55 @@ Modelo conceitual feito a partir das informações retiradas do minimundo.
 ### 7	MODELO FÍSICO<br>
         a) inclusão das instruções de criacão das estruturas em SQL/DDL 
         (criação de tabelas, alterações, etc..) 
+        ```
+        create table CLIENTE(
+            id serial PRIMARY KEY,
+            nome varchar(255),
+            email varchar(255)
+        );
+
+        create table ENDERECO(
+            id serial PRIMARY KEY,
+            rua varchar(255),
+            cidade varchar(255),
+            bairro varchar(255),
+            cep varchar(20),
+            id_cliente int,
+            FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
+        );
+
+        create table PEDIDO(
+            id serial PRIMARY KEY,
+            data date,
+            valor real,
+            id_cliente int,
+            FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
+        );
         
+        create table PRODUTO(
+            id serial PRIMARY KEY,
+            produto varchar(255),
+            preco real,
+            quantidade int,
+            descricao varchar(255)
+        );
+
+        create table PEDIDO_PRODUTO(
+            id serial PRIMARY KEY,
+            id_pedido int,
+            id_produto int,
+            FOREIGN KEY(id_pedido) REFERENCES PEDIDO(id),
+            FOREIGN KEY(id_produto) REFERENCES PRODUTO(id)
+        );
+
+        create table CATEGORIA(
+            id serial PRIMARY KEY,
+            categoria varchar(50),
+            id_produto int,
+            FOREIGN KEY(id_produto) REFERENCES PRODUTO(id)
+        );
+        
+        ```
        
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
