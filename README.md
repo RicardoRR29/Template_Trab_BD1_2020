@@ -130,6 +130,11 @@ create table PEDIDO(
     FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
 );
 
+create table CATEGORIA(
+    id serial PRIMARY KEY,
+    categoria varchar(50)
+);
+
 create table PRODUTO(
     id serial PRIMARY KEY,
     produto varchar(255),
@@ -144,13 +149,9 @@ create table PEDIDO_PRODUTO(
     id serial PRIMARY KEY,
     id_pedido int,
     id_produto int,
+    quantidade int,
     FOREIGN KEY(id_pedido) REFERENCES PEDIDO(id),
     FOREIGN KEY(id_produto) REFERENCES PRODUTO(id)
-);
-
-create table CATEGORIA(
-    id serial PRIMARY KEY,
-    categoria varchar(50),
 );
 ```
 
@@ -272,7 +273,7 @@ INSERT INTO "categoria" (categoria) VALUES
 ('Outros'),
 ('Processados'); 
 ```
-### Tabela Produto
+### Tabela PRODUTO
 ```
 INSERT INTO "produto" (produto,preco,quantidade,descricao,id_categoria) VALUES
 ('tomate',1,200,'vegetal fresco',1),
@@ -299,6 +300,65 @@ INSERT INTO "produto" (produto,preco,quantidade,descricao,id_categoria) VALUES
 ('Power Ranger',1,8,'Faz parte da infância',2),
 ('Ben 10',12,4,'Faz parte da infância',2),
 ('Dragon Ball DVD',10,3,'Faz parte da infância',6);
+```
+### Tabela PEDIDO_PRODUTO
+```
+INSERT INTO "pedido_produto" (id_produto,id_pedido,quantidade) VALUES 
+(7,1,1),
+(3,2,3),
+(5,3,2),
+(8,4,4),
+(5,5,6),
+(9,6,2),
+(1,7,3),
+(4,8,4),
+(7,9,1),
+(9,10,2),
+(3,11,12),
+(5,12,11),
+(7,13,1),
+(2,14,1),
+(5,15,2),
+(7,16,1),
+(8,17,2),
+(9,18,1),
+(2,19,1),
+(3,20,1),
+(5,21,1),
+(7,22,2),
+(8,23,1),
+(6,24,2),
+(4,25,1),
+(2,26,1),
+(3,27,1),
+(5,28,1),
+(6,29,2),
+(1,30,1),
+(2,31,2),
+(4,32,1),
+(5,33,1),
+(7,34,1),
+(8,35,1),
+(3,36,2),
+(2,37,1),
+(24,27,2),
+(23,28,1),
+(21,29,1),
+(23,30,1),
+(2,31,1),
+(22,32,2),
+(19,33,1),
+(17,34,2),
+(12,35,1),
+(14,36,1),
+(15,37,1),
+(11,34,1),
+(12,35,2),
+(15,36,1),
+(16,37,2),
+(16,36,1),
+(18,37,1),
+(19,34,3);
 ```
 
 
