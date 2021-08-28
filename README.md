@@ -105,8 +105,7 @@ Modelo conceitual feito a partir das informações retiradas do minimundo.
 
 
 ### 7	MODELO FÍSICO<br>
-        a) inclusão das instruções de criacão das estruturas em SQL/DDL 
-        (criação de tabelas, alterações, etc..) 
+         
         ```
         create table CLIENTE(
             id serial PRIMARY KEY,
@@ -126,7 +125,7 @@ Modelo conceitual feito a partir das informações retiradas do minimundo.
 
         create table PEDIDO(
             id serial PRIMARY KEY,
-            data date,
+            data varchar(40),
             valor real,
             id_cliente int,
             FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
@@ -154,15 +153,112 @@ Modelo conceitual feito a partir das informações retiradas do minimundo.
             id_produto int,
             FOREIGN KEY(id_produto) REFERENCES PRODUTO(id)
         );
-        
+
         ```
-       
+
+
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
         a) inclusão das instruções de inserção dos dados nas tabelas criadas pelo script de modelo físico
         (Drop para exclusão de tabelas + create definição de para tabelas e estruturas de dados + insert para dados a serem inseridos)
         b) Criar um novo banco de dados para testar a restauracao 
         (em caso de falha na restauração o grupo não pontuará neste quesito)
         c) formato .SQL
+        
+
+        ```
+                        
+        INSERT INTO "cliente" (nome,email) VALUES 
+        ('Jermaine','amet.dapibus@lacus.com'),
+        ('Oprah','non@augueeutempor.edu'),('Claudia','enim@mollis.edu'),
+        ('Levi','nunc.sed@libero.com'),
+        ('Dominique','leo.in.lobortis@Aliquam.org'),
+        ('Vladimir','iaculis@etultricesposuere.org'),
+        ('Holmes','sit@Nam.org'),
+        ('Hannah','Mauris.molestie@volutpatNulla.co.uk'),
+        ('Alexa','Donec@tempus.ca'),
+        ('Kiara','metus.In@nonenim.edu');
+        INSERT INTO "CLIENTE" (nome,email) VALUES 
+        ('Samuel','ut.pharetra@vulputatelacus.edu'),
+        ('Randall','ipsum@temporerat.net'),
+        ('Lillian','Donec@accumsansed.org'),
+        ('Elaine','nisl.Quisque@Nunc.org'),
+        ('Stephanie','venenatis.a@aliquet.net'),
+        ('Camille','dapibus.quam@etcommodoat.com'),
+        ('Jason','dolor@pede.org'),
+        ('Diana','egestas.Aliquam@risus.com'),
+        ('Lydia','ut@et.net'),
+        ('Thor','pretium@Aliquam.ca'),
+        ('Chloe','non@semperet.co.uk');
+
+
+                
+        INSERT INTO "PEDIDO" (id_cliente,data, valor) VALUES 
+        (17,'10/07/2014',33.35),
+        (20,'21/02/2012',60.00),
+        (3,'09/05/2010',20.00),
+        (18,'14/03/2020',19.90),
+        (17,'21/08/2019',20.90),
+        (3,'21/12/2020',10.00),
+        (17,'30/04/2021',20.10),
+        (2,'02/05/2021',30.00),
+        (11,'13/05/2021',10.50),
+        (19,'01/06/2021',500.00),
+        (14,'06/03/2013',10.00),
+        (1,'12/04/2018',5.00),
+        (8,'30/03/2020',3.00),
+        (14,'10/10/2020',33.35),
+        (13,'14/12/2020',60.00),
+        (10,'11/05/2021',20.00),
+        (16,'10/05/2021',19.90),
+        (21,'19/05/2021',20.90),
+        (2,'01/07/2021',10.00),
+        (19,'06/03/2013',20.10),
+        (3,'12/04/2018',30.00),
+        (1,'30/03/2020',10.50),
+        (20,'10/10/2020',500.00),
+        (13,'14/12/2020',10.00),
+        (8,'11/05/2021',5.00),
+        (2,'10/05/2021',3.00),
+        (10,'19/05/2021',33.35),
+        (17,'01/07/2021',60.00),
+        (16,'06/03/2013',20.00),
+        (3,'12/04/2018',19.90),
+        (5,'30/03/2020',20.90),
+        (5,'10/10/2020',10.00),
+        (5,'14/12/2020',20.10),
+        (21,'11/05/2021',30.00),
+        (13,'10/05/2021',10.50),
+        (15,'19/05/2021',500.00),
+        (11,'01/07/2021',10.00),
+        (13,'14/12/2020',5.00),
+        (12,'11/05/2021',3.00),
+        (6,'10/05/2021',2.00),
+        (15,'19/05/2021',1.50);
+
+
+        INSERT INTO "endereco" (rua,cidade,bairro,cep) VALUES 
+        ('Rua Conselheiro Antônio Prado','Jacareí','Parque Itamarati','12307-410'),
+        ('Rua Quatorze','Belo Horizonte','Diamante (Barreiro)','30660-720'),
+        ('Rua Pedro Celestino 1550','Campo Grande','Centro','79002-925'),
+        ('Quadra 305 Sul Alameda 2','Palmas','Plano Diretor Sul','77015-436'),
+        ('Rua Vaticano','Porto Velho','Igarapé','76824-238'),
+        ('Rua Carmelita Ireng','Boa Vista','Senador Hélio Campos','69316-600'),
+        ('Rua Nossa Senhora da Conceição','São Luís','Coroadinho','65042-590'),
+        ('Rua Osvaldo Cruz','Cuiabá','Pico do Amor','78065-125'),
+        ('Travessa','LinhoManaus','Tarumã','69041-191'),
+        ('Rua Plínio Schmidt','Lages','Sagrado Coração de Jesus','88508-526'),
+        ('Rua Existente','Aracaju','Zona de Expansão (Aruana)','49000-861'),
+        ('Rua Vigário Freire 10','Caruaru','Nossa Senhora das Dores','55002-907'),
+        ('Quadra Quadra 107 Conjunto 8','Brasília','Recanto das Emas','72601-309'),
+        ('Alameda Lugar Bonito','Macapá','Boné Azul','68909-607'),
+        ('Rua Professor Rodrigo Costa','Manaus','Cidade Nova','69096-630'),
+        ('Rua Marfim','Rio Branco','Wanderley Dantas','69902-885'),
+        ('Rua Centaurias','Aparecida de Goiânia','Expansul','74986-240'),
+        ('Rua Lineo Arantes de Mello','Presidente Prudente','Conjunto Habitacional Ana Jacinta','19064-415'),
+        ('Rua Padre Cícero','São Luís','São Bernardo','65053-490'),
+        ('Adonis Costa','Cachoeiro de Itapemirim','Jardim América','29310-845'),
+        ('Rua Anita Garibaldi','Francisco Beltrão','Centro','85601-280');
+        ```
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
