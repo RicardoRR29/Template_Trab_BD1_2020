@@ -526,22 +526,162 @@ select id,data,extract(day from data) as dia,extract(month from data) as mes,ext
 ![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/data-5.PNG?raw=true "Consulta com uso de funções date")
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
-    a) Criar minimo 3 de exclusão
-    b) Criar minimo 3 de atualização
+```
+UPDATE categoria SET categoria = 'Brinquedos'  WHERE categoria = 'Brinquedo'
+```
+```
+UPDATE cliente SET nome = 'Claudio'  WHERE nome = 'Claudia'
+```
+```
+UPDATE categoria SET categoria = 'Brinquedos'  WHERE categoria = 'Brinquedo'
+```
+```
+DELETE from produto  WHERE produto = 'porta'
+```
+```
+DELETE from categoria  WHERE categoria = 'Marcenaria'
+```
+```
+DELETE from pedido_produto WHERE id_pedido = 8
+```
+
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
     a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
     b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
+```
+select nome, pedido.data from cliente
+inner join pedido
+on (cliente.id=pedido.id_cliente)
+```
+![Consulta com uso de inner join e order by](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/inner-1.PNG?raw=true "Consulta com uso de inner join e order by")
+![Consulta com uso de inner join e order by](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/inner-1(2).PNG?raw=true "Consulta com uso de inner join e order by")
+```
+select produto, categoria.categoria from produto
+inner join categoria
+on (categoria.id=produto.id_categoria)
+```
+![Consulta com uso de inner join e order by](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/inner-2.PNG?raw=true "Consulta com uso de inner join e order by")
+```
+select nome, produto.produto from cliente
+inner join pedido
+on (cliente.id=pedido.id_cliente)
+inner join pedido_produto
+on(pedido.id=pedido_produto.id_pedido)
+inner join produto
+on(produto.id=pedido_produto.id_produto)
+where preco > 900
+```
+![Consulta com uso de inner join e order by](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/inner-3.PNG?raw=true "Consulta com uso de inner join e order by")
+```
+select nome, pedido.data from cliente
+inner join pedido
+on (cliente.id=pedido.id_cliente)
+order by nome
+```
+![Consulta com uso de inner join e order by](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/inner-4.PNG?raw=true "Consulta com uso de inner join e order by")
+```
+select produto, categoria.categoria from produto
+inner join categoria
+on (categoria.id=produto.id_categoria)
+order by categoria.categoria desc
+```
+![Consulta com uso de inner join e order by](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/inner-5.PNG?raw=true "Consulta com uso de inner join e order by")
+```
+select nome, produto.produto from cliente
+inner join pedido
+on (cliente.id=pedido.id_cliente)
+inner join pedido_produto
+on(pedido.id=pedido_produto.id_pedido)
+inner join produto
+on(produto.id=pedido_produto.id_produto)
+where preco > 900
+order by preco
+```
+![Consulta com uso de inner join e order by](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/inner-6.PNG?raw=true "Consulta com uso de inner join e order by")
+
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
-    a) Criar minimo 2 envolvendo algum tipo de junção
+
+> Não consegui trazer um bom exemplo por ter deixado uma chave primaria em todas as tabelas com repetição
 
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
-    a) Criar minimo 1 de cada tipo
-
+```
+select produto,c.categoria from produto
+left outer join categoria as c
+on(produto.id = c.id)
+```
+![Consulta com uso de left, right e full join](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/join-1.PNG?raw=true "Consulta com uso de left, right e full join")
+```
+select produto,c.categoria from produto
+right outer join categoria as c
+on(produto.id = c.id)
+```
+![Consulta com uso de left, right e full join](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/join-2.PNG?raw=true "Consulta com uso de left, right e full join")
+```
+select produto,c.categoria from produto
+full outer join categoria as c
+on(produto.id = c.id)
+```
+![Consulta com uso de left, right e full join](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/join-3.PNG?raw=true "Consulta com uso de left, right e full join")
+```
+select produto,c.categoria from produto
+left outer join categoria as c
+on(produto.id = c.id)
+```
+![Consulta com uso de left, right e full join](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/join-4.PNG?raw=true "Consulta com uso de left, right e full join")
 #### 9.9	CONSULTAS COM SELF JOIN E VIEW (Mínimo 6)<br>
-        a) Uma junção que envolva Self Join (caso não ocorra na base justificar e substituir por uma view)
-        b) Outras junções com views que o grupo considere como sendo de relevante importância para o trabalho
+```
+select cli1.nome,cli2.email
+from
+cliente as cli1
+inner join
+cliente as cli2
+on (cli1.id = cli2.id);
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/view-4.PNG?raw=true "Consulta com uso de self join e view")
+```
+select prod1.produto,prod2.preco
+from
+produto as prod1
+inner join
+produto as prod2
+on (prod1.id = prod2.id);
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/view-5.PNG?raw=true "Consulta com uso de self join e view")
+```
+select ped1.valor,ped2.data from
+pedido as ped2
+inner join
+pedido as ped2
+on (ped1.id = ped2.id);
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/view-6.PNG?raw=true "Consulta com uso de self join e view")
+```
+create view nome_e_rua as
+select nome,rua
+from cliente as c
+inner join endereco as e
+on (c.id = e.id_cliente)
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/view-1.PNG?raw=true "Consulta com uso de self join e view")
+```
+create view categoria_produto as
+select produto,preco,c.categoria
+from produto as p
+inner join categoria as c
+on (p.id_categoria = c.id);
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/view-2.PNG?raw=true "Consulta com uso de self join e view")
+```
+create view nome_data as
+select nome,p.data,p.valor
+from cliente as c
+inner join pedido as p
+on (p.id_cliente = c.id);
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/view-3.PNG?raw=true "Consulta com uso de self join e view")
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/view-3(2).PNG?raw=true "Consulta com uso de self join e view")
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
      a) Criar minimo 1 envolvendo GROUP BY
