@@ -105,65 +105,65 @@ Modelo conceitual feito a partir das informações retiradas do minimundo.
 
 
 ### 7	MODELO FÍSICO<br>
-         
-        ```
-        drop table if exists CLIENTE cascade;
-        drop table if exists ENDERECO cascade;
-        drop table if exists PRODUTO cascade;
-        drop table if exists PEDIDO cascade;
-        drop table if exists PEDIDO_PRODUTO cascade;
-        drop table if exists CATEGORIA cascade;
+
+```
+drop table if exists CLIENTE cascade;
+drop table if exists ENDERECO cascade;
+drop table if exists PRODUTO cascade;
+drop table if exists PEDIDO cascade;
+drop table if exists PEDIDO_PRODUTO cascade;
+drop table if exists CATEGORIA cascade;
 
 
-        create table CLIENTE(
-            id serial PRIMARY KEY,
-            nome varchar(255),
-            email varchar(255)
-        );
+create table CLIENTE(
+    id serial PRIMARY KEY,
+    nome varchar(255),
+    email varchar(255)
+);
 
-        create table ENDERECO(
-            id serial PRIMARY KEY,
-            rua varchar(255),
-            cidade varchar(255),
-            bairro varchar(255),
-            cep varchar(20),
-            id_cliente int,
-            FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
-        );
+create table ENDERECO(
+    id serial PRIMARY KEY,
+    rua varchar(255),
+    cidade varchar(255),
+    bairro varchar(255),
+    cep varchar(20),
+    id_cliente int,
+    FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
+);
 
-        create table PEDIDO(
-            id serial PRIMARY KEY,
-            data varchar(40),
-            valor real,
-            id_cliente int,
-            FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
-        );
-        
-        create table PRODUTO(
-            id serial PRIMARY KEY,
-            produto varchar(255),
-            preco real,
-            quantidade int,
-            descricao varchar(255),
-            id_categoria int,
-            FOREIGN KEY(id_categoria) REFERENCES CATEGORIA(id)
-        );
+create table PEDIDO(
+    id serial PRIMARY KEY,
+    data varchar(40),
+    valor real,
+    id_cliente int,
+    FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
+);
 
-        create table PEDIDO_PRODUTO(
-            id serial PRIMARY KEY,
-            id_pedido int,
-            id_produto int,
-            FOREIGN KEY(id_pedido) REFERENCES PEDIDO(id),
-            FOREIGN KEY(id_produto) REFERENCES PRODUTO(id)
-        );
+create table PRODUTO(
+    id serial PRIMARY KEY,
+    produto varchar(255),
+    preco real,
+    quantidade int,
+    descricao varchar(255),
+    id_categoria int,
+    FOREIGN KEY(id_categoria) REFERENCES CATEGORIA(id)
+);
 
-        create table CATEGORIA(
-            id serial PRIMARY KEY,
-            categoria varchar(50),
-            
-        );
+create table PEDIDO_PRODUTO(
+    id serial PRIMARY KEY,
+    id_pedido int,
+    id_produto int,
+    FOREIGN KEY(id_pedido) REFERENCES PEDIDO(id),
+    FOREIGN KEY(id_produto) REFERENCES PRODUTO(id)
+);
 
-        ```
+create table CATEGORIA(
+    id serial PRIMARY KEY,
+    categoria varchar(50),
+    
+);
+
+```
 
 
 ### 8	INSERT APLICADO NAS TABELAS DO BANCO DE DADOS<br>
