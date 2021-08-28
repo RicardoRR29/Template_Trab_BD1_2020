@@ -15,7 +15,7 @@ Ricardo Rocha Ribeiro: r3ifes@gmail.com
  
 ### 3.MINI-MUNDO<br>
 
-> O sistema proposto para o JG Mercados conterá as informacões aqui detalhadas. Sobre os clientes serão armazenados um código de identificação, nome, email, endereço. Sobre o endereço serão armazenadas as informações referentes as ruas/rodovias, cidade, estado e cep e código do cliente. Cada cliente poderá ter no mínimo um pedido, e este será composto por um código, data, código do cliente, e valor. Haverá também uma lista de produtos, em que os produtos possuirão um código, nome, preço, quantidade, descricao. Os pedidos estarão ligados a produtos, com a informação do nome, quantidade, código de categoria, valor, código do produto, código do pedido. Sobre as categorias serão armazenados um código específico para cada categoria e um nome.
+> O sistema proposto para o JG Mercados conterá as informacões aqui detalhadas. Sobre os clientes serão armazenados um código de identificação, nome, email, endereço. Sobre o endereço serão armazenadas as informações referentes as ruas, cidades, CEPs e código do clientes. Os clientes poderão ou não ter pedidos, e este será composto por um código, data, código do cliente, e valor. Haverá também uma lista de produtos, em que os produtos possuirão um código, nome do produto, preço, quantidade, descricao e código de categoria. Os pedidos estarão ligados a produtos, com a informação da quantidade, valor total, código do produto e código do pedido. Sobre as categorias serão armazenados um código específico para cada categoria e um nome.
 
 ### 4.PROTOTIPAÇÃO, PERGUNTAS A SEREM RESPONDIDAS E TABELA DE DADOS<br>
 #### 4.1 RASCUNHOS BÁSICOS DA INTERFACE (MOCKUPS)<br>
@@ -24,34 +24,25 @@ Link para baixar o pdf interativo:
 
 ![Arquivo PDF do Protótipo Balsamiq feito para JG Mercados](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/arquivos/JGMercados.pdf?raw=true "JG Mercados")
 #### 4.2 QUAIS PERGUNTAS PODEM SER RESPONDIDAS COM O SISTEMA PROPOSTO?
-    a) O sistema proposto poderá fornecer quais tipos de relatórios e informações? 
-    b) Crie uma lista com os 5 principais relatórios que poderão ser obtidos por meio do sistema proposto!
     
-> A empresa JG Mercados, a partir das informações armazenadas, poderá fornecer:
-> a)O sistema proposto pode ajudar a entender o que está acontecendo na empresa, quem são os clientes, o que é mais vendido, qual produto é mais vendido entre os clientes que moram perto/longe. Qual categoria os clientes de determinada região compram mais. Estas informações podem se tornar chaves para uma boa decisão de negócio.
-
-> b) Relatório que mostre o a localização dos clientes. Caso queiram fazer alguma propaganda digital ou até mesmo física, sabem qual área escolher para a exibição da propaganda.
-> Relatório que mostre os horários de pico do mercado.
-> Relatório para saber qual produto/categoria está sendo mais/menos vendido(a). 
-
+ A empresa JG Mercados, a partir das informações armazenadas, poderá fornecer:
+ a)O sistema proposto pode ajudar a entender o que está acontecendo na empresa, quem são os clientes, o que é mais vendido, qual produto é mais vendido entre os clientes que moram perto/longe. Qual categoria os clientes de determinada região compram mais. Estas informações podem se tornar chaves para uma boa decisão de negócio.
+<br>
+b) Relatórios:
+>  1) - Relatório que mostre o a localização dos clientes. Caso queiram fazer alguma propaganda digital ou até mesmo física, sabem qual área escolher para a exibição da propaganda.
+> 2) Relatório que mostre os horários de pico do mercado.
+> 3) Relatório para saber qual produto/categoria está sendo mais/menos vendido(a). 
+> 4)
+> 5)
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
-    a) Esta tabela deve conter todos os atributos do sistema e um mínimo de 10 linhas/registros de dados.
-    b) Esta tabela tem a intenção de simular um relatório com todos os dados que serão armazenados 
     
 ![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaJGMercados.xlsx?raw=true "Tabela - Empresa Devcom")
     
     
 ### 5.MODELO CONCEITUAL<br>
-    A) Utilizar a Notação adequada (Preferencialmente utilizar o BR Modelo 3)
-    B) O mínimo de entidades do modelo conceitual pare este trabalho será igual a 3 e o Máximo 5.
-        * informe quais são as 3 principais entidades do sistema em densenvolvimento<br>(se houverem mais de 3 entidades, pense na importância da entidade para o sistema)       
-    C) Principais fluxos de informação/entidades do sistema (mínimo 3). <br>Dica: normalmente estes fluxos estão associados as tabelas que conterão maior quantidade de dados 
-    D) Qualidade e Clareza
-        Garantir que a semântica dos atributos seja clara no esquema (nomes coerentes com os dados).
-        Criar o esquema de forma a garantir a redução de informação redundante, possibilidade de valores null, 
-        e tuplas falsas (Aplicar os conceitos de normalização abordados).   
+Modelo conceitual feito a partir das informações retiradas do minimundo.
         
 ![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/modelo-conceitual.PNG?raw=true "Modelo Conceitual")
     
@@ -63,11 +54,11 @@ Link para baixar o pdf interativo:
     [Grupo02]: George Matheus Santos
 
 #### 5.2 Descrição dos dados 
-    [objeto]: [descrição do objeto]
     
-    EXEMPLO:
-    CLIENTE: Tabela que armazena as informações relativas ao cliente<br>
-    CPF: campo que armazena o número de Cadastro de Pessoa Física para cada cliente da empresa.<br>
+    > #### CLIENTE: tabela com os principais dados do cliente
+    > > Na tabela CLIENTE:
+    > > 
+    
 
 
 ### 6	MODELO LÓGICO<br>
