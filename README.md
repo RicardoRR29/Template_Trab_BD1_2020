@@ -43,7 +43,7 @@ b) Relatórios:
 ### 5.MODELO CONCEITUAL<br>
 Modelo conceitual feito a partir das informações retiradas do minimundo.
         
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/modelo-conceitual.PNG?raw=true "Modelo Conceitual")
+![Modelo conceitual](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/modelo-conceitual.PNG?raw=true "Modelo Conceitual")
     
     
         
@@ -92,7 +92,7 @@ Modelo conceitual feito a partir das informações retiradas do minimundo.
         quantidade: quantidade vendida do produto no pedido em questão
 ### 6	MODELO LÓGICO<br>
 
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/modelo-logico.PNG?raw=true "Modelo Lógico")
+![Modelo Lógico](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/modelo-logico.PNG?raw=true "Modelo Lógico")
 
 
 ### 7	MODELO FÍSICO<br>
@@ -368,160 +368,160 @@ INSERT INTO "pedido_produto" (id_produto,id_pedido,quantidade) VALUES
 ```
 select * from CLIENTE;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectCliente.PNG?raw=true "Modelo Lógico")
+![Tabela cliente](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectCliente.PNG?raw=true "Tabela cliente")
 ```
 select * from ENDERECO;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectEndereco.PNG?raw=true "Modelo Lógico")
+![Tabela endereço](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectEndereco.PNG?raw=true "Tabela endereço")
 ```
 select * from PEDIDO;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedido1.PNG?raw=true "Modelo Lógico")
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedido2.PNG?raw=true "Modelo Lógico")
+![Tabela pedido](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedido1.PNG?raw=true "Tabela pedido")
+![Tabela pedido](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedido2.PNG?raw=true "Tabela pedido")
 ```
 select * from PRODUTO;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProduto.PNG?raw=true "Modelo Lógico")
+![Tabela produto](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProduto.PNG?raw=true "Tabela produto")
 ```
 select * from PEDIDO_PRODUTO;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto1.PNG?raw=true "Modelo Lógico")
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto2.PNG?raw=true "Modelo Lógico")
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto3.PNG?raw=true "Modelo Lógico")
+![Tabela pedido_produto](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto1.PNG?raw=true "Tabela pedido_produto")
+![Tabela pedido_produto](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto2.PNG?raw=true "Tabela pedido_produto")
+![Tabela pedido_produto](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto3.PNG?raw=true "Tabela pedido_produto")
 ```
 select * from CATEGORIA;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectCategoria.PNG?raw=true "Modelo Lógico")
+![Tabela categoria](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectCategoria.PNG?raw=true "Tabela categoria")
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE<br>
 ```
 select id_pedido,id_produto from PEDIDO_PRODUTO WHERE quantidade = 2;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhereQuantidade2.PNG?raw=true "Modelo Lógico")
+![Consulta com filtro where](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhereQuantidade2.PNG?raw=true "Consulta com filtro where")
 ```
 select * from PRODUTO WHERE quantidade > 199;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProdutoWithWhereQuatidade.PNG?raw=true "Modelo Lógico")
+![Consulta com filtro where](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProdutoWithWhereQuatidade.PNG?raw=true "Consulta com filtro where")
 ```
 select * from PRODUTO WHERE preco > 20;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProdutoWithWherePreco.PNG?raw=true "Modelo Lógico")
+![Consulta com filtro where](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProdutoWithWherePreco.PNG?raw=true "Consulta com filtro where")
 ```
 select * from PEDIDO WHERE data > '2021-10-14';
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoWithWhereData.PNG?raw=true "Modelo Lógico")
+![Consulta com filtro where](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoWithWhereData.PNG?raw=true "Consulta com filtro where")
 ```
 select * from pedido where id_cliente = 13;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com filtro where](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoWithWhereId.PNG?raw=true "Consulta com filtro where")
 
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
 ### Consultas que envolvam os operadores lógicos AND, OR e Not
 ```
 select * from PEDIDO WHERE data > '2019-10-14' AND valor > 10;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-1.PNG?raw=true "Modelo Lógico")
+![Consulta com operador lógico](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-1.PNG?raw=true "Consulta com operador lógico")
 ```
 select * from PEDIDO WHERE data > '2019-10-14' OR valor > 10;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-2.PNG?raw=true "Modelo Lógico")
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-2(2).PNG?raw=true "Modelo Lógico")
+![Consulta com operador lógico](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-2.PNG?raw=true "Consulta com operador lógico")
+![Consulta com operador lógico](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-2(2).PNG?raw=true "Consulta com operador lógico")
 ```
 select * from PEDIDO WHERE data > '2019-10-14' AND NOT valor > 10;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-3.PNG?raw=true "Modelo Lógico")
+![Consulta com operador lógico](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-3.PNG?raw=true "Consulta com operador lógico")
 ```
 select * from PRODUTO WHERE quantidade > 10 AND preco > 1000;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-4.PNG?raw=true "Modelo Lógico")
+![Consulta com operador lógico](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-4.PNG?raw=true "Consulta com operador lógico")
 ```
 select * from PRODUTO WHERE id_categoria = 3 OR preco < 1;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-5.PNG?raw=true "Modelo Lógico")
+![Consulta com operador lógico](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-5.PNG?raw=true "Consulta com operador lógico")
 ### Consultas com operadores aritméticos
 ```
 (select * from PEDIDO where id_cliente < 5)
 UNION
 (select * from PEDIDO where id_cliente > 15)
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-1.PNG?raw=true "Modelo Lógico")
+![Consulta com operador aritmético](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-1.PNG?raw=true "Consulta com operador aritmético")
 ```
 (select * from PEDIDO where id_cliente = 3)
 INTERSECT
 (select * from PEDIDO where valor > 20)
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-2.PNG?raw=true "Modelo Lógico")
+![Consulta com operador aritmético](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-2.PNG?raw=true "Consulta com operador aritmético")
 ```
 (select * from PEDIDO where id_cliente = 3)
 EXCEPT
 (select * from PEDIDO where valor > 20)
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-3.PNG?raw=true "Modelo Lógico")
+![Consulta com operador aritmético](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-3.PNG?raw=true "Consulta com operador aritmético")
 ### Consultas com operação de renomear nomes de campos ou tabelas
 ```
 select id as codigo, data, valor as preco, id_cliente as cod_cliente from pedido;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com operação de renomear")
 ```
 select * from pedido as p;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com operação de renomear")
 ```
 select id, categoria as nome_categoria  from categoria;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com operação de renomear")
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
 
 ### Consultas que envolvam like ou ilike
 ```
 select * from cliente where nome like '%an%';
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome like '%Ra%';
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome ilike '%Ra%';
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome like 'ha%';
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome ilike 'ha%';
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome like '%A';
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome ilike '%A';
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
 ### Consulta para cada tipo de função data apresentada.
 ```
 select id,data,date_part('month',(age(current_date,data))) as mes_diferenca from pedido where date_part('month',(age(current_date,data))) > 5;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
 ```
 select id,data,extract(month from data) as mes,extract(day from data) as dia from pedido where extract(day from data) > 15;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
 ```
 select id,data,date_part('year',(age(current_date,data))) from pedido where date_part('year',(age(current_date,data))) > 1;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
 ```
 select id,data,extract(month from data) as mes,extract(day from data) as dia from pedido where extract(month from data) < 6;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
 ```
 select id,data,extract(day from data) as dia,extract(month from data) as mes,extract(year from data) as ano from pedido where extract(year from data) < 2018;
 ```
-![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
