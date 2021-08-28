@@ -151,9 +151,7 @@ create table PEDIDO_PRODUTO(
 create table CATEGORIA(
     id serial PRIMARY KEY,
     categoria varchar(50),
-    
 );
-
 ```
 
 
@@ -185,9 +183,11 @@ INSERT INTO "cliente" (nome,email) VALUES
 ('Thor','pretium@Aliquam.ca'),
 ('Chloe','non@semperet.co.uk');
 
-´´´
+```
+
 ### Tabela PEDIDO
-´´´ 
+
+``` 
 INSERT INTO "pedido" (id_cliente,data, valor) VALUES 
 (17,'10/07/2014',33.35),
 (20,'21/02/2012',60.00),
@@ -230,9 +230,9 @@ INSERT INTO "pedido" (id_cliente,data, valor) VALUES
 (12,'11/05/2021',3.00),
 (6,'10/05/2021',2.00),
 (15,'19/05/2021',1.50);
-´´´
+```
 ### Tabela ENDERECO
-´´´
+```
 INSERT INTO "endereco" (rua,cidade,bairro,cep) VALUES 
 ('Rua Conselheiro Antônio Prado','Jacareí','Parque Itamarati','12307-410'),
 ('Rua Quatorze','Belo Horizonte','Diamante (Barreiro)','30660-720'),
@@ -255,9 +255,9 @@ INSERT INTO "endereco" (rua,cidade,bairro,cep) VALUES
 ('Rua Padre Cícero','São Luís','São Bernardo','65053-490'),
 ('Adonis Costa','Cachoeiro de Itapemirim','Jardim América','29310-845'),
 ('Rua Anita Garibaldi','Francisco Beltrão','Centro','85601-280');
-´´´
+```
 ### Tabela CATEGORIA
-´´´
+```
 INSERT INTO "categoria" (categoria) VALUES
 ('Vegetais'),
 ('Brinquedo'),
@@ -273,7 +273,6 @@ INSERT INTO "categoria" (categoria) VALUES
 ('Processados'); 
 ```
 ### Tabela Produto
-
 ```
 INSERT INTO "produto" (produto,preco,quantidade,descricao,id_categoria) VALUES
 ('tomate',1,200,'vegetal fresco',1),
