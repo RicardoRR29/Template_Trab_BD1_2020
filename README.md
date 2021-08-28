@@ -234,28 +234,28 @@ INSERT INTO "pedido" (id_cliente,data, valor) VALUES
 ```
 ### Tabela ENDERECO
 ```
-INSERT INTO "endereco" (rua,cidade,bairro,cep) VALUES 
-('Rua Conselheiro Antônio Prado','Jacareí','Parque Itamarati','12307-410'),
-('Rua Quatorze','Belo Horizonte','Diamante (Barreiro)','30660-720'),
-('Rua Pedro Celestino 1550','Campo Grande','Centro','79002-925'),
-('Quadra 305 Sul Alameda 2','Palmas','Plano Diretor Sul','77015-436'),
-('Rua Vaticano','Porto Velho','Igarapé','76824-238'),
-('Rua Carmelita Ireng','Boa Vista','Senador Hélio Campos','69316-600'),
-('Rua Nossa Senhora da Conceição','São Luís','Coroadinho','65042-590'),
-('Rua Osvaldo Cruz','Cuiabá','Pico do Amor','78065-125'),
-('Travessa','LinhoManaus','Tarumã','69041-191'),
-('Rua Plínio Schmidt','Lages','Sagrado Coração de Jesus','88508-526'),
-('Rua Existente','Aracaju','Zona de Expansão (Aruana)','49000-861'),
-('Rua Vigário Freire 10','Caruaru','Nossa Senhora das Dores','55002-907'),
-('Quadra Quadra 107 Conjunto 8','Brasília','Recanto das Emas','72601-309'),
-('Alameda Lugar Bonito','Macapá','Boné Azul','68909-607'),
-('Rua Professor Rodrigo Costa','Manaus','Cidade Nova','69096-630'),
-('Rua Marfim','Rio Branco','Wanderley Dantas','69902-885'),
-('Rua Centaurias','Aparecida de Goiânia','Expansul','74986-240'),
-('Rua Lineo Arantes de Mello','Presidente Prudente','Conjunto Habitacional Ana Jacinta','19064-415'),
-('Rua Padre Cícero','São Luís','São Bernardo','65053-490'),
-('Adonis Costa','Cachoeiro de Itapemirim','Jardim América','29310-845'),
-('Rua Anita Garibaldi','Francisco Beltrão','Centro','85601-280');
+INSERT INTO "endereco" (rua,cidade,bairro,cep, id_cliente) VALUES 
+('Rua Conselheiro Antônio Prado','Jacareí','Parque Itamarati','12307-410',1),
+('Rua Quatorze','Belo Horizonte','Diamante (Barreiro)','30660-720',2),
+('Rua Pedro Celestino 1550','Campo Grande','Centro','79002-925',3),
+('Quadra 305 Sul Alameda 2','Palmas','Plano Diretor Sul','77015-436',4),
+('Rua Vaticano','Porto Velho','Igarapé','76824-238',5),
+('Rua Carmelita Ireng','Boa Vista','Senador Hélio Campos','69316-600',6),
+('Rua Nossa Senhora da Conceição','São Luís','Coroadinho','65042-590',7),
+('Rua Osvaldo Cruz','Cuiabá','Pico do Amor','78065-125',8),
+('Travessa','LinhoManaus','Tarumã','69041-191',9),
+('Rua Plínio Schmidt','Lages','Sagrado Coração de Jesus','88508-526',10),
+('Rua Existente','Aracaju','Zona de Expansão (Aruana)','49000-861',11),
+('Rua Vigário Freire 10','Caruaru','Nossa Senhora das Dores','55002-907',12),
+('Quadra Quadra 107 Conjunto 8','Brasília','Recanto das Emas','72601-309',13),
+('Alameda Lugar Bonito','Macapá','Boné Azul','68909-607',14),
+('Rua Professor Rodrigo Costa','Manaus','Cidade Nova','69096-630',15),
+('Rua Marfim','Rio Branco','Wanderley Dantas','69902-885',16),
+('Rua Centaurias','Aparecida de Goiânia','Expansul','74986-240',17),
+('Rua Lineo Arantes de Mello','Presidente Prudente','Conjunto Habitacional Ana Jacinta','19064-415',18),
+('Rua Padre Cícero','São Luís','São Bernardo','65053-490',19),
+('Adonis Costa','Cachoeiro de Itapemirim','Jardim América','29310-845',20),
+('Rua Anita Garibaldi','Francisco Beltrão','Centro','85601-280',21);
 ```
 ### Tabela CATEGORIA
 ```
@@ -365,8 +365,33 @@ INSERT INTO "pedido_produto" (id_produto,id_pedido,quantidade) VALUES
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
 
 #### 9.1	CONSULTAS DAS TABELAS COM TODOS OS DADOS INSERIDOS (Todas) <br>
-
-># Marco de Entrega 01: Do item 1 até o item 9.1<br>
+```
+select * from CLIENTE;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectCliente.PNG?raw=true "Modelo Lógico")
+```
+select * from ENDERECO;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectEndereco.PNG?raw=true "Modelo Lógico")
+```
+select * from PEDIDO;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedido1.PNG?raw=true "Modelo Lógico")
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedido2.PNG?raw=true "Modelo Lógico")
+```
+select * from PRODUTO;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProduto.PNG?raw=true "Modelo Lógico")
+```
+select * from PEDIDO_PRODUTO;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto1.PNG?raw=true "Modelo Lógico")
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto2.PNG?raw=true "Modelo Lógico")
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProduto3.PNG?raw=true "Modelo Lógico")
+```
+select * from CATEGORIA;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectCategoria.PNG?raw=true "Modelo Lógico")
 
 #### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
 #### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
