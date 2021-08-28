@@ -124,7 +124,7 @@ create table ENDERECO(
 
 create table PEDIDO(
     id serial PRIMARY KEY,
-    data varchar(40),
+    data date,
     valor real,
     id_cliente int,
     FOREIGN KEY(id_cliente) REFERENCES CLIENTE(id)
@@ -190,47 +190,47 @@ INSERT INTO "cliente" (nome,email) VALUES
 
 ``` 
 INSERT INTO "pedido" (id_cliente,data, valor) VALUES 
-(17,'10/07/2014',33.35),
-(20,'21/02/2012',60.00),
-(3,'09/05/2010',20.00),
-(18,'14/03/2020',19.90),
-(17,'21/08/2019',20.90),
-(3,'21/12/2020',10.00),
-(17,'30/04/2021',20.10),
-(2,'02/05/2021',30.00),
-(11,'13/05/2021',10.50),
-(19,'01/06/2021',500.00),
-(14,'06/03/2013',10.00),
-(1,'12/04/2018',5.00),
-(8,'30/03/2020',3.00),
-(14,'10/10/2020',33.35),
-(13,'14/12/2020',60.00),
-(10,'11/05/2021',20.00),
-(16,'10/05/2021',19.90),
-(21,'19/05/2021',20.90),
-(2,'01/07/2021',10.00),
-(19,'06/03/2013',20.10),
-(3,'12/04/2018',30.00),
-(1,'30/03/2020',10.50),
-(20,'10/10/2020',500.00),
-(13,'14/12/2020',10.00),
-(8,'11/05/2021',5.00),
-(2,'10/05/2021',3.00),
-(10,'19/05/2021',33.35),
-(17,'01/07/2021',60.00),
-(16,'06/03/2013',20.00),
-(3,'12/04/2018',19.90),
-(5,'30/03/2020',20.90),
-(5,'10/10/2020',10.00),
-(5,'14/12/2020',20.10),
-(21,'11/05/2021',30.00),
-(13,'10/05/2021',10.50),
-(15,'19/05/2021',500.00),
-(11,'01/07/2021',10.00),
-(13,'14/12/2020',5.00),
-(12,'11/05/2021',3.00),
-(6,'10/05/2021',2.00),
-(15,'19/05/2021',1.50);
+(17,'2014-10-07',33.35),
+(20,'2012-02-21',60.00),
+(3,'2010-09-05',20.00),
+(18,'2020-03-14',19.90),
+(17,'2019-08-21',20.90),
+(3,'2020-12-21',10.00),
+(17,'2021-04-30',20.10),
+(2,'2021-02-05',30.00),
+(11,'2021-05-13',10.50),
+(19,'2021-01-06',500.00),
+(14,'2013-06-03',10.00),
+(1,'2018-12-04',5.00),
+(8,'2020-03-30',3.00),
+(14,'2020-10-10',33.35),
+(13,'2020-12-14',60.00),
+(10,'2021-11-05',20.00),
+(16,'2021-10-05',19.90),
+(21,'2021-05-19',20.90),
+(2,'2021-01-07',10.00),
+(19,'2013-06-03',20.10),
+(3,'2018-12-04',30.00),
+(1,'2020-03-30',10.50),
+(20,'2020-10-10',500.00),
+(13,'2020-12-14',10.00),
+(8,'2021-11-05',5.00),
+(2,'2021-10-05',3.00),
+(10,'2021-05-19',33.35),
+(17,'2021-01-07',60.00),
+(16,'2013-06-03',20.00),
+(3,'2018-12-04',19.90),
+(5,'2020-03-30',20.90),
+(5,'2020-10-10',10.00),
+(5,'2020-12-14',20.10),
+(21,'2021-11-05',30.00),
+(13,'2021-10-05',10.50),
+(15,'2021-05-19',500.00),
+(11,'2021-01-07',10.00),
+(13,'2020-12-14',5.00),
+(12,'2021-11-05',3.00),
+(6,'2021-10-05',2.00),
+(15,'2021-05-19',1.50);
 ```
 ### Tabela ENDERECO
 ```
@@ -261,13 +261,13 @@ INSERT INTO "endereco" (rua,cidade,bairro,cep, id_cliente) VALUES
 ```
 INSERT INTO "categoria" (categoria) VALUES
 ('Vegetais'),
-('Brinquedo'),
+('Brinquedos'),
 ('Eletrônicos'),
 ('Carnes'),
 ('Frios'),
 ('Filmes'),
 ('Cereais'),
-('Higiêne'),
+('Higiene'),
 ('Marcenaria'),
 ('Biscoitos'),
 ('Outros'),
@@ -359,7 +359,7 @@ INSERT INTO "pedido_produto" (id_produto,id_pedido,quantidade) VALUES
 (16,36,1),
 (18,37,1),
 (19,34,3);
-```
+``` 
 
 
 ### 9	TABELAS E PRINCIPAIS CONSULTAS<br>
@@ -393,15 +393,135 @@ select * from CATEGORIA;
 ```
 ![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectCategoria.PNG?raw=true "Modelo Lógico")
 
-#### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE (Mínimo 4)<br>
-#### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
-    a) Criar 5 consultas que envolvam os operadores lógicos AND, OR e Not
-    b) Criar no mínimo 3 consultas com operadores aritméticos 
-    c) Criar no mínimo 3 consultas com operação de renomear nomes de campos ou tabelas
+#### 9.2	CONSULTAS DAS TABELAS COM FILTROS WHERE<br>
+```
+select id_pedido,id_produto from PEDIDO_PRODUTO WHERE quantidade = 2;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhereQuantidade2.PNG?raw=true "Modelo Lógico")
+```
+select * from PRODUTO WHERE quantidade > 199;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProdutoWithWhereQuatidade.PNG?raw=true "Modelo Lógico")
+```
+select * from PRODUTO WHERE preco > 20;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectProdutoWithWherePreco.PNG?raw=true "Modelo Lógico")
+```
+select * from PEDIDO WHERE data > '2021-10-14';
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoWithWhereData.PNG?raw=true "Modelo Lógico")
+```
+select * from pedido where id_cliente = 13;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
 
+#### 9.3	CONSULTAS QUE USAM OPERADORES LÓGICOS, ARITMÉTICOS E TABELAS OU CAMPOS RENOMEADOS (Mínimo 11)
+### Consultas que envolvam os operadores lógicos AND, OR e Not
+```
+select * from PEDIDO WHERE data > '2019-10-14' AND valor > 10;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-1.PNG?raw=true "Modelo Lógico")
+```
+select * from PEDIDO WHERE data > '2019-10-14' OR valor > 10;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-2.PNG?raw=true "Modelo Lógico")
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-2(2).PNG?raw=true "Modelo Lógico")
+```
+select * from PEDIDO WHERE data > '2019-10-14' AND NOT valor > 10;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-3.PNG?raw=true "Modelo Lógico")
+```
+select * from PRODUTO WHERE quantidade > 10 AND preco > 1000;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-4.PNG?raw=true "Modelo Lógico")
+```
+select * from PRODUTO WHERE id_categoria = 3 OR preco < 1;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/operador(9.3)-5.PNG?raw=true "Modelo Lógico")
+### Consultas com operadores aritméticos
+```
+(select * from PEDIDO where id_cliente < 5)
+UNION
+(select * from PEDIDO where id_cliente > 15)
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-1.PNG?raw=true "Modelo Lógico")
+```
+(select * from PEDIDO where id_cliente = 3)
+INTERSECT
+(select * from PEDIDO where valor > 20)
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-2.PNG?raw=true "Modelo Lógico")
+```
+(select * from PEDIDO where id_cliente = 3)
+EXCEPT
+(select * from PEDIDO where valor > 20)
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/OperadorArit-3.PNG?raw=true "Modelo Lógico")
+### Consultas com operação de renomear nomes de campos ou tabelas
+```
+select id as codigo, data, valor as preco, id_cliente as cod_cliente from pedido;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select * from pedido as p;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select id, categoria as nome_categoria  from categoria;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
-    a) Criar outras 5 consultas que envolvam like ou ilike
-    b) Criar uma consulta para cada tipo de função data apresentada.
+
+### Consultas que envolvam like ou ilike
+```
+select * from cliente where nome like '%an%';
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select * from cliente where nome like '%Ra%';
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select * from cliente where nome ilike '%Ra%';
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select * from cliente where nome like 'ha%';
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select * from cliente where nome ilike 'ha%';
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select * from cliente where nome like '%A';
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select * from cliente where nome ilike '%A';
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+### Consulta para cada tipo de função data apresentada.
+```
+select id,data,date_part('month',(age(current_date,data))) as mes_diferenca from pedido where date_part('month',(age(current_date,data))) > 5;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select id,data,extract(month from data) as mes,extract(day from data) as dia from pedido where extract(day from data) > 15;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select id,data,date_part('year',(age(current_date,data))) from pedido where date_part('year',(age(current_date,data))) > 1;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select id,data,extract(month from data) as mes,extract(day from data) as dia from pedido where extract(month from data) < 6;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
+```
+select id,data,extract(day from data) as dia,extract(month from data) as mes,extract(year from data) as ano from pedido where extract(year from data) < 2018;
+```
+![Alt text](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Modelo Lógico")
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
