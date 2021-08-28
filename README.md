@@ -461,67 +461,69 @@ EXCEPT
 ```
 select id as codigo, data, valor as preco, id_cliente as cod_cliente from pedido;
 ```
-![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com operação de renomear")
+![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/renomear-1.PNG?raw=true "Consulta com operação de renomear")
+![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/renomear-1(2).PNG?raw=true "Consulta com operação de renomear")
 ```
 select * from pedido as p;
 ```
-![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com operação de renomear")
+![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/renomear-2.PNG?raw=true "Consulta com operação de renomear")
+![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/renomear-2(2).PNG?raw=true "Consulta com operação de renomear")
 ```
 select id, categoria as nome_categoria  from categoria;
 ```
-![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com operação de renomear")
+![Consulta com operação de renomear](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/renomear-3.PNG?raw=true "Consulta com operação de renomear")
 #### 9.4	CONSULTAS QUE USAM OPERADORES LIKE E DATAS (Mínimo 12) <br>
 
 ### Consultas que envolvam like ou ilike
 ```
 select * from cliente where nome like '%an%';
 ```
-![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/like-1.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome like '%Ra%';
 ```
-![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/like-2.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome ilike '%Ra%';
 ```
-![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/like-3.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome like 'ha%';
 ```
-![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/like-4.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome ilike 'ha%';
 ```
-![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/like-5.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome like '%A';
 ```
-![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/like-6.PNG?raw=true "Consulta com like ou ilike")
 ```
 select * from cliente where nome ilike '%A';
 ```
-![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com like ou ilike")
+![Consulta com like ou ilike](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/like-7.PNG?raw=true "Consulta com like ou ilike")
 ### Consulta para cada tipo de função data apresentada.
 ```
 select id,data,date_part('month',(age(current_date,data))) as mes_diferenca from pedido where date_part('month',(age(current_date,data))) > 5;
 ```
-![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/data-1.PNG?raw=true "Consulta com uso de funções date")
 ```
 select id,data,extract(month from data) as mes,extract(day from data) as dia from pedido where extract(day from data) > 15;
 ```
-![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/data-2.PNG?raw=true "Consulta com uso de funções date")
 ```
 select id,data,date_part('year',(age(current_date,data))) from pedido where date_part('year',(age(current_date,data))) > 1;
 ```
-![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/data-3.PNG?raw=true "Consulta com uso de funções date")
 ```
 select id,data,extract(month from data) as mes,extract(day from data) as dia from pedido where extract(month from data) < 6;
 ```
-![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/data-4.PNG?raw=true "Consulta com uso de funções date")
 ```
 select id,data,extract(day from data) as dia,extract(month from data) as mes,extract(year from data) as ano from pedido where extract(year from data) < 2018;
 ```
-![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/selectPedidoProdutoWithWhere.PNG?raw=true "Consulta com uso de funções date")
+![Consulta com uso de funções date](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/data-5.PNG?raw=true "Consulta com uso de funções date")
 
 #### 9.5	INSTRUÇÕES APLICANDO ATUALIZAÇÃO E EXCLUSÃO DE DADOS (Mínimo 6)<br>
     a) Criar minimo 3 de exclusão
