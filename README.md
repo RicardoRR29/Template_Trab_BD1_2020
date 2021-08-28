@@ -55,11 +55,50 @@ Modelo conceitual feito a partir das informações retiradas do minimundo.
 
 #### 5.2 Descrição dos dados 
     
-    > #### CLIENTE: tabela com os principais dados do cliente
-    > > Na tabela CLIENTE:
-    > > 
-    
-
+    CLIENTE: tabela com os principais dados do cliente
+    ENDERECO: tabela com o endereço de cada cliente
+    PEDIDO_PRODUTO: tabela que cria a relação entre os produtos e os pedidos, possuindo uma referência de cada um deles.
+    PRODUTO: tabela com os principais dados dos produtos
+    CATEGORIA: tabela com a lista de categorias
+    <br>
+    Na tabela CLIENTE:
+        id: identificação única do cliente
+        nome: nome do cliente
+        email: email do cliente
+<br>
+    Na tabela ENDERECO:
+        id: identificação única do endereço
+        rua: rua em que o cliente mora
+        cidade: cidade que o cliente mora
+        bairro: bairro o cliente mora
+        cep: identificação do endereço do cliente
+        id_cliente: identificação do código da tabela cliente
+<br>
+    Na tabela PEDIDO:
+        id: identificação única do pedido
+        data: data em que houve o pedido
+        valor: valor total do pedido
+        id_cliente: identificação de qual cliente fez o pedido
+<br>
+    Na tabela PRODUTO:
+        id: identificação única do produto
+        produto: nome do produto
+        preco: valor de venda do produto
+        quantidade: quantidade do produto em questão no estoque
+        descricao: descrição/comentário do produto
+        id_categoria: identificação da categoria relacionada ao produto
+<br>
+    Na tabela CATEGORIA:  
+        id: identificação única da categoria
+        categoria: nome da categoria
+<br>
+    Na tabela PEDIDO_PRODUTO:  
+        id: identificação única da relação entre um dos pedidos e um dos produtos
+        id_pedido: identificação do pedido
+        id_produto: identificação do produto
+        quantidade: quantidade vendida do produto no pedido em questão
+     
+<br>
 
 ### 6	MODELO LÓGICO<br>
 
