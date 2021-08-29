@@ -601,8 +601,44 @@ order by preco
 
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
 
-> Não consegui trazer um bom exemplo por ter deixado uma chave primaria em todas as tabelas com repetição
-
+```
+select id,nome, email from cliente
+group by nome, email, id
+```
+![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-1.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
+```
+select ped.id as pedido,c.nome,prod.produto,p_p.quantidade,ped.valor,ped.data
+from pedido as ped
+inner join cliente as c
+on (ped.id_cliente = c.id)
+inner join pedido_produto as p_p
+on (ped.id = p_p.id_pedido)
+inner join produto as prod
+on (prod.id = p_p.id_produto)
+group by ped.id,c.nome,prod.produto,p_p.quantidade,ped.valor,ped.data
+```
+![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-2.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
+![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-2(2).PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
+```
+SELECT  id_pedido,count(*) as quant_produtos
+FROM pedido_produto
+Group By id_pedido
+order by id_pedido
+```
+![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-3.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
+![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-3(2).PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
+```
+select count(id),sum(valor) from pedido
+```
+![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-4.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
+```
+select count(id),min(valor),max(valor),avg(valor),sum(valor) from pedido
+```
+![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-5.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
+```
+select count(id),avg(preco) from produto
+```
+![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-6.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
 ```
 select produto,c.categoria from produto
