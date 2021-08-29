@@ -547,8 +547,6 @@ DELETE from pedido_produto WHERE id_pedido = 8
 
 
 #### 9.6	CONSULTAS COM INNER JOIN E ORDER BY (Mínimo 6)<br>
-    a) Uma junção que envolva todas as tabelas possuindo no mínimo 2 registros no resultado
-    b) Outras junções que o grupo considere como sendo as de principal importância para o trabalho
 ```
 select nome, pedido.data from cliente
 inner join pedido
@@ -684,10 +682,41 @@ on (p.id_cliente = c.id);
 ![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/view-3(2).PNG?raw=true "Consulta com uso de self join e view")
 
 #### 9.10	SUBCONSULTAS (Mínimo 4)<br>
-     a) Criar minimo 1 envolvendo GROUP BY
-     b) Criar minimo 1 envolvendo algum tipo de junção
-
-
+```
+select valor, extract(year from data) as ano
+from pedido 
+where extract(year from data) > 2020
+group by valor, ano;
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/sub-1.PNG?raw=true "Consulta com uso de self join e view")
+```
+select produto,descricao,c.categoria as opcoes_categorias from produto
+left outer join categoria as c
+on(produto.id = c.id)
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/sub-2.PNG?raw=true "Consulta com uso de self join e view")
+```
+select ped.id,prod.produto,p_p.quantidade,ped.valor
+from pedido as ped
+inner join pedido_produto as p_p
+on (ped.id = p_p.id_pedido)
+inner join produto as prod
+on (prod.id = p_p.id_produto)
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/sub-3.PNG?raw=true "Consulta com uso de self join e view")
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/sub-3(2).PNG?raw=true "Consulta com uso de self join e view")
+```
+select ped.id as pedido,c.nome,prod.produto,p_p.quantidade,ped.valor,ped.data
+from pedido as ped
+inner join cliente as c
+on (ped.id_cliente = c.id)
+inner join pedido_produto as p_p
+on (ped.id = p_p.id_pedido)
+inner join produto as prod
+on (prod.id = p_p.id_produto)
+```
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/sub-4.PNG?raw=true "Consulta com uso de self join e view")
+![Consulta com uso de self join e view](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/sub-4(2).PNG?raw=true "Consulta com uso de self join e view")
 ### 10 RELATÓRIOS E GRÁFICOS
 
 #### a) análises e resultados provenientes do banco de dados desenvolvido (usar modelo disponível)
