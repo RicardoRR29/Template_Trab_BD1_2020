@@ -29,7 +29,7 @@ a) O sistema proposto pode ajudar a entender o que está acontecendo na empresa,
 <br>
 b) Relatórios:
 > 1) Relatório que mostre o a localização dos clientes. Caso queiram fazer alguma propaganda digital ou até mesmo física, sabem qual área escolher para a exibição da propaganda.
-> 2) Relatório que mostre os horários de pico do mercado.
+> 2) Relatório que mostre as temporadas em que há mais movimento no mercado.
 > 3) Relatório para saber qual produto/categoria está sendo mais/menos vendido(a). 
 > 4)
 > 5)
