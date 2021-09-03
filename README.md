@@ -37,7 +37,7 @@ b) Relatórios:
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
     
-![Exemplo de Tabela de dados da Empresa Devcom](https://github.com/discipbd1/trab01/blob/master/arquivos/TabelaJGMercados.xlsx?raw=true "Tabela - Empresa Devcom")
+![Exemplo de Tabela de dados da Empresa JG Mercados](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/arquivos/TabelaJGMercados.xlsx?raw=true "Tabela - Empresa JG Mercados")
     
     
 ### 5.MODELO CONCEITUAL<br>
