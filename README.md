@@ -639,7 +639,7 @@ select count(id),avg(preco) from produto
 ```
 select produto,c.categoria from produto as p
 left outer join categoria as c
-on(p.id_categoria = c.id)
+on(p.id = c.id)
 ```
 ![Consulta com uso de left, right e full join](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/join-1.PNG?raw=true "Consulta com uso de left, right e full join")
 ```
