@@ -28,11 +28,11 @@ Link para baixar o pdf interativo:
 a) O sistema proposto pode ajudar a entender o que está acontecendo na empresa, quem são os clientes, o que é mais vendido, qual produto é mais vendido entre os clientes que moram perto/longe. Qual categoria os clientes de determinada região compram mais. Estas informações podem se tornar chaves para uma boa decisão de negócio.
 <br>
 b) Relatórios:
-> 1) Relatório que mostre o a localização dos clientes. Caso queiram fazer alguma propaganda digital ou até mesmo física, sabem qual área escolher para a exibição da propaganda.
-> 2) Relatório que mostre as temporadas em que há mais movimento no mercado.
-> 3) Relatório para saber qual produto/categoria está sendo mais/menos vendido(a). 
-> 4)
-> 5)
+> 1) Relatório que mostre a quantidade de produtos por categoria.
+> 2) Relatório que mostre a quantidade de dinheiro obtido por categoria.
+> 3) Relatório que mostre o dinheiro recebido durante todos os anos de atividade.
+> 4) Relatório que mostre quanto foi vendido pela empresa em 2021. Este Relatório ajuda a compreender quais temporadas do ano a empresa tem uma demanda maior ou consegue vender mais
+> 5) Relatório que possa representar uma porcentagem de gasto de cada cliente, podendo ser visualizado todos os nomes dos clientes e uma porcentagem relativa de quanto eles gastam
  
  
 #### 4.3 TABELA DE DADOS DO SISTEMA:
@@ -602,31 +602,27 @@ order by preco
 #### 9.7	CONSULTAS COM GROUP BY E FUNÇÕES DE AGRUPAMENTO (Mínimo 6)<br>
 
 ```
-select id,nome, email from cliente
-group by nome, email, id
+select c.categoria, count(p.id) from categoria as c
+inner join produto as p
+on (c.id = p.id_categoria)
+group by c.id
 ```
 ![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-1.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
 ```
-select ped.id as pedido,c.nome,prod.produto,p_p.quantidade,ped.valor,ped.data
-from pedido as ped
-inner join cliente as c
-on (ped.id_cliente = c.id)
-inner join pedido_produto as p_p
-on (ped.id = p_p.id_pedido)
-inner join produto as prod
-on (prod.id = p_p.id_produto)
-group by ped.id,c.nome,prod.produto,p_p.quantidade,ped.valor,ped.data
+select p.produto, count(pp.id) from produto as p
+inner join pedido_produto as pp
+on (pp.id_produto = p.id)
+group by p.produto
 ```
 ![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-2.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
-![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-2(2).PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
 ```
-SELECT  id_pedido,count(*) as quant_produtos
-FROM pedido_produto
-Group By id_pedido
-order by id_pedido
+SELECT  c.nome,count(pe.id) FROM cliente as c 
+INNER JOIN pedido as pe
+on(pe.id_cliente = c.id)
+GROUP BY c.nome
 ```
 ![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-3.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
-![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-3(2).PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
+
 ```
 select count(id),sum(valor) from pedido
 ```
@@ -641,9 +637,9 @@ select count(id),avg(preco) from produto
 ![Consulta com uso de group by e funções de agrupamento](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/group-6.PNG?raw=true "Consulta com uso de group by e funções de agrupamento")
 #### 9.8	CONSULTAS COM LEFT, RIGHT E FULL JOIN (Mínimo 4)<br>
 ```
-select produto,c.categoria from produto
+select produto,c.categoria from produto as p
 left outer join categoria as c
-on(produto.id = c.id)
+on(p.id_categoria = c.id)
 ```
 ![Consulta com uso de left, right e full join](https://github.com/RicardoRR29/Template_Trab_BD1_2020/blob/master/images/join-1.PNG?raw=true "Consulta com uso de left, right e full join")
 ```
